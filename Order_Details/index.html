@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        .popup.show {
+            display: block;
+        }
+
+        .popup button {
+            margin-top: 10px;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .overlay.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Go to <a href="../Home/index.html">PO Requests</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <center>
+            <h1>Order Details</h1>
+        </center>
+    
+        <table id="orderDetailsTable">
+            <thead>
+                <tr>
+                    <th>S.NO</th>
+                    <th>Item Name</th>
+                    <th>No. of Units</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be populated here -->
+            </tbody>
+        </table>
+        <center>
+            <button id="generateInvoiceBtn" class="status-button">Generate Invoice</button>
+        </center>
+        
+    </main>
+
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <p>Invoice Generated Successfully</p>
+        <center>
+            <button id="homeBtn" class="view-button">Go to Home</button>    
+        </center>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay"></div>
+
+    <script src="details.js"></script>
+</body>
+</html>
